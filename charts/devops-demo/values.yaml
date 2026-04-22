@@ -1,0 +1,35 @@
+app:
+  name: devops-demo
+  replicaCount: 1
+  image:
+    repository: ghcr.io/xputraade/devops-demo
+    tag: latest
+    pullPolicy: Always
+  service:
+    type: NodePort
+    port: 80
+    targetPort: 3000
+    nodePort: 30080
+  env:
+    PORT: "3000"
+    DB_HOST: postgres
+    DB_PORT: "5432"
+    DB_USER: postgres
+    DB_PASSWORD: postgres
+    DB_NAME: appdb
+
+postgres:
+  name: postgres
+  replicaCount: 1
+  image:
+    repository: postgres
+    tag: "16-alpine"
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 5432
+    targetPort: 5432
+  env:
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: postgres
+    POSTGRES_DB: appdb

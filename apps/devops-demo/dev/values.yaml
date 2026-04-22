@@ -1,0 +1,6 @@
+app:
+  replicaCount: 1
+  image:
+    repository: ghcr.io/xputraade/devops-demo
+    tag: "latest"
+    pullPolicy: Always
