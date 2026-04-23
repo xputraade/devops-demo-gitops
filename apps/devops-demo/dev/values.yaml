@@ -2,5 +2,5 @@ app:
   replicaCount: 2
   image:
     repository: ghcr.io/xputraade/devops-demo
-    tag: "latest"
+    tag: "gitops-demo-v1"
     pullPolicy: Always
