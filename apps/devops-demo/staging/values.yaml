@@ -4,8 +4,3 @@ app:
     repository: ghcr.io/xputraade/devops-demo
     tag: "gitops-demo-v2"
     pullPolicy: Always
-  service:
-    type: NodePort
-    port: 80
-    targetPort: 3000
-    nodePort: 30081
